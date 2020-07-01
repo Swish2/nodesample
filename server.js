@@ -1,7 +1,7 @@
 const express = require('express')
 const next = require('next')
 
-const port = process.env.PORT || 3000
+const port = process.env.PORT
 const dev = process.env.NODE_ENV !== 'production'
 const app = next({ dev })
 const handle = app.getRequestHandler()
@@ -19,8 +19,8 @@ app.prepare()
     app.render(req, res, actualPage, {})
 })
 
-server.get('/about', (req, res) => {
-    const actualPage = '/about'
+server.get('/register', (req, res) => {
+    const actualPage = '/register'
     app.render(req, res, actualPage, {})
 })
     
